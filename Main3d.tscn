@@ -1,0 +1,299 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://ui.gd" type="Script" id=2]
+[ext_resource path="res://fonts/adobe_source_san_pro_ttf/godot_font_format/source_sans_pro_regular_16.tres" type="DynamicFont" id=3]
+[ext_resource path="res://fonts/adobe_source_san_pro_ttf/godot_font_format/source_sans_pro_bold_16.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Dialogue.tscn" type="PackedScene" id=5]
+
+[sub_resource type="QuadMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=5]
+emission_enabled = true
+emission = Color( 1, 1, 1, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = true
+
+[sub_resource type="Shader" id=2]
+code = "// NOTE: Shader automatically converted from Godot Engine 3.4.2.stable's CanvasItemMaterial.
+
+shader_type canvas_item;
+
+void fragment() {
+    COLOR = vec4(UV.x, UV.y, 0.5, 1.0);
+}"
+
+[sub_resource type="ShaderMaterial" id=3]
+resource_local_to_scene = true
+shader = SubResource( 2 )
+
+[node name="Main" type="Spatial"]
+
+[node name="Camera" type="Camera" parent="."]
+projection = 1
+
+[node name="CSGMesh" type="CSGMesh" parent="."]
+transform = Transform( 5.63233, 0, 0, 0, 1.01032, 0, 0, 0, 1, 0, 0, -0.620949 )
+mesh = SubResource( 1 )
+material = SubResource( 5 )
+
+[node name="ViewportContainer" type="ViewportContainer" parent="CSGMesh"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="CSGMesh/ViewportContainer"]
+arvr = true
+size = Vector2( 1920, 1080 )
+size_override_stretch = true
+render_direct_to_screen = true
+
+[node name="ColorRect" type="ColorRect" parent="CSGMesh/ViewportContainer/Viewport"]
+material = SubResource( 3 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="UI" type="Control" parent="CSGMesh/ViewportContainer/Viewport"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="CSGMesh/ViewportContainer/Viewport/UI"]
+anchor_right = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = 400.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CSGMesh/ViewportContainer/Viewport/UI/CenterContainer"]
+margin_left = 853.0
+margin_top = 158.0
+margin_right = 1026.0
+margin_bottom = 221.0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CSGMesh/ViewportContainer/Viewport/UI/CenterContainer/HBoxContainer"]
+margin_right = 149.0
+margin_bottom = 63.0
+
+[node name="InitiateA" type="Button" parent="CSGMesh/ViewportContainer/Viewport/UI/CenterContainer/HBoxContainer/VBoxContainer"]
+margin_right = 149.0
+margin_bottom = 23.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 3 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "Initiate 'avatars' dialogue"
+
+[node name="HSeparator" type="HSeparator" parent="CSGMesh/ViewportContainer/Viewport/UI/CenterContainer/HBoxContainer/VBoxContainer"]
+margin_top = 27.0
+margin_right = 149.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 5 )
+
+[node name="InitiateB" type="Button" parent="CSGMesh/ViewportContainer/Viewport/UI/CenterContainer/HBoxContainer/VBoxContainer"]
+visible = false
+margin_top = 31.0
+margin_right = 164.0
+margin_bottom = 58.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 3 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "Initiate 'question' dialogue"
+
+[node name="HSeparator2" type="HSeparator" parent="CSGMesh/ViewportContainer/Viewport/UI/CenterContainer/HBoxContainer/VBoxContainer"]
+visible = false
+margin_top = 71.0
+margin_right = 164.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 0, 5 )
+
+[node name="InitiateC" type="Button" parent="CSGMesh/ViewportContainer/Viewport/UI/CenterContainer/HBoxContainer/VBoxContainer"]
+visible = false
+margin_top = 71.0
+margin_right = 164.0
+margin_bottom = 98.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 3 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "Initiate 'complex' dialogue"
+
+[node name="HSeparator3" type="HSeparator" parent="CSGMesh/ViewportContainer/Viewport/UI/CenterContainer/HBoxContainer/VBoxContainer"]
+visible = false
+margin_top = 111.0
+margin_right = 164.0
+margin_bottom = 366.0
+rect_min_size = Vector2( 0, 255 )
+
+[node name="Continue" type="Button" parent="CSGMesh/ViewportContainer/Viewport/UI/CenterContainer/HBoxContainer/VBoxContainer"]
+margin_top = 36.0
+margin_right = 149.0
+margin_bottom = 63.0
+focus_mode = 0
+size_flags_horizontal = 15
+custom_fonts/font = ExtResource( 4 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "Continue"
+
+[node name="VSeparator" type="VSeparator" parent="CSGMesh/ViewportContainer/Viewport/UI/CenterContainer/HBoxContainer"]
+margin_left = 153.0
+margin_right = 173.0
+margin_bottom = 63.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="Variables" type="Panel" parent="CSGMesh/ViewportContainer/Viewport/UI/CenterContainer/HBoxContainer"]
+visible = false
+margin_left = 192.0
+margin_right = 492.0
+margin_bottom = 401.0
+rect_min_size = Vector2( 300, 400 )
+
+[node name="Label" type="Label" parent="CSGMesh/ViewportContainer/Viewport/UI/CenterContainer/HBoxContainer/Variables"]
+anchor_right = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = 17.0
+autowrap = true
+
+[node name="Vars" type="Label" parent="CSGMesh/ViewportContainer/Viewport/UI/CenterContainer/HBoxContainer/Variables"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -197.0
+margin_right = 43.0
+margin_bottom = -20.0
+custom_fonts/font = ExtResource( 3 )
+text = "var1 =
+
+var2 =
+
+var3 =
+
+var4 =
+
+var5 ="
+
+[node name="Var1" type="LineEdit" parent="CSGMesh/ViewportContainer/Viewport/UI/CenterContainer/HBoxContainer/Variables"]
+margin_left = 48.0
+margin_top = 200.0
+margin_right = 104.0
+margin_bottom = 227.0
+focus_mode = 1
+custom_fonts/font = ExtResource( 3 )
+max_length = 10
+placeholder_text = "true"
+placeholder_alpha = 0.2
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="Var2" type="LineEdit" parent="CSGMesh/ViewportContainer/Viewport/UI/CenterContainer/HBoxContainer/Variables"]
+margin_left = 48.0
+margin_top = 240.0
+margin_right = 104.0
+margin_bottom = 267.0
+focus_mode = 1
+custom_fonts/font = ExtResource( 3 )
+max_length = 10
+placeholder_text = "2"
+placeholder_alpha = 0.2
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="Var3" type="LineEdit" parent="CSGMesh/ViewportContainer/Viewport/UI/CenterContainer/HBoxContainer/Variables"]
+margin_left = 48.0
+margin_top = 280.0
+margin_right = 104.0
+margin_bottom = 307.0
+focus_mode = 1
+custom_fonts/font = ExtResource( 3 )
+max_length = 10
+placeholder_text = "5"
+placeholder_alpha = 0.2
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="Var4" type="LineEdit" parent="CSGMesh/ViewportContainer/Viewport/UI/CenterContainer/HBoxContainer/Variables"]
+margin_left = 48.0
+margin_top = 320.0
+margin_right = 104.0
+margin_bottom = 347.0
+focus_mode = 1
+custom_fonts/font = ExtResource( 3 )
+max_length = 10
+placeholder_text = "5"
+placeholder_alpha = 0.2
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="Var5" type="LineEdit" parent="CSGMesh/ViewportContainer/Viewport/UI/CenterContainer/HBoxContainer/Variables"]
+margin_left = 48.0
+margin_top = 360.0
+margin_right = 104.0
+margin_bottom = 387.0
+focus_mode = 1
+custom_fonts/font = ExtResource( 3 )
+max_length = 10
+placeholder_text = "5"
+placeholder_alpha = 0.2
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CSGMesh/ViewportContainer/Viewport/UI/CenterContainer/HBoxContainer/Variables"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -125.0
+margin_top = -76.0
+margin_right = -10.0
+margin_bottom = -10.0
+
+[node name="SetVars" type="Button" parent="CSGMesh/ViewportContainer/Viewport/UI/CenterContainer/HBoxContainer/Variables/VBoxContainer"]
+margin_right = 115.0
+margin_bottom = 27.0
+focus_mode = 0
+size_flags_horizontal = 15
+custom_fonts/font = ExtResource( 3 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "Set Variables"
+
+[node name="HSeparator" type="HSeparator" parent="CSGMesh/ViewportContainer/Viewport/UI/CenterContainer/HBoxContainer/Variables/VBoxContainer"]
+margin_top = 31.0
+margin_right = 115.0
+margin_bottom = 35.0
+
+[node name="Clear" type="Button" parent="CSGMesh/ViewportContainer/Viewport/UI/CenterContainer/HBoxContainer/Variables/VBoxContainer"]
+margin_top = 39.0
+margin_right = 115.0
+margin_bottom = 66.0
+focus_mode = 0
+size_flags_horizontal = 15
+custom_fonts/font = ExtResource( 3 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "Clear Dictionaries"
+
+[node name="Dialogue" parent="CSGMesh/ViewportContainer/Viewport" instance=ExtResource( 5 )]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -448.0
+margin_top = -690.0
+margin_right = -448.0
+margin_bottom = -690.0

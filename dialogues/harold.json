@@ -1,0 +1,38 @@
+{
+  "first": {
+    "type": "text",
+    "name": "Bard",
+    "avatar": "bard/bard.png",
+    "position": "left",
+    "animation_in": "move_in",
+    "animation_out": "off",
+    "content": "Wise and controlled, always has a confident posture, even when not confident, with a face like he knows something you don’t. Harold is a good king who always followed his responsibilities, assuming the throne despite his love for the arts – music, theater, acting, lore. ",
+    "next": "0"
+  },
+  "repeat": {
+    "type": "text",
+    "name": "Bard",
+    "avatar": "bard/bard.png",
+    "position": "left",
+    "animation_in": "move_in",
+    "content": "Harold sneaks out of his palace whenever he can to live the lives of his subjects as Harry the Bard. He feels like his hands are tied concerning the turmoil in his kingdom, mostly due to his court and advisors, and the aggressiveness in which everyone seems to deal.",
+    "next": "0"
+  },
+  "0": {
+    "type": "text",
+    "name": "Bard",
+    "avatar": "bard/bard.png",
+    "position": "left",
+    "animation_in": "move_in",
+    "content": "Harry the Bard uses clean, high-end clothing that looks like have been intentionally worn out, with too right cuts and bruises. A cloak, a vest, a shirt peeking out of the vest, a belt with a long end, cotton trousers and bracelets on both wrists. Harry the Bard seems oddly groomed to his line of work.",
+    "next": "1"
+  },
+  "1": {
+    "type": "text",
+    "name": "Bard",
+    "avatar": "bard/bard.png",
+    "position": "left",
+    "animation_in": "shake_regular_long",
+    "content": "And remeber to not overdo the p|a|u|s|e|s|.",
+  }
+}

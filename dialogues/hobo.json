@@ -1,0 +1,131 @@
+{
+  "first": {
+    "type": "text",
+    "name": "",
+    "avatar": "",
+    "position": "left",
+    "animation_in": "move_in",
+    "animation_out": "off",
+    "content": "A drunk man in ragged clothes stumbles through the door. He walks in cursive lines to the counter and falls onto it.",
+    "next": "0"
+  },
+  "0": {
+    "type": "text",
+    "name": "Peasent",
+    "avatar": "peasent/peasent.png",
+    "position": "right",
+    "animation_in": "move_in",
+    "content": "Lass, spare a poor man one ale.",
+    "next": "1"
+  },
+  "1": {
+    "type": "text",
+    "name": "",
+    "avatar": "peasent/peasent.png",
+    "position": "right",
+
+    "content": "His voice is rough and slurred, barely understandable.",
+    "next": "2"
+  },
+  "2": {
+    "type": "text",
+    "name": "Peasent",
+    "avatar": "peasent/peasent.png",
+    "position": "left",
+
+    "content": "Damn cats outside gave me a thirst with them high noses.",
+    "next": "question_block"
+  },
+  "question_block": {
+    "type": "question",
+    "text": "",
+    "options": ["Option 1", "Option 2", "Option 3"],
+    "next": ["chose_option_1", "chose_option_2", "chose_option_3"]
+  },
+  "chose_option_1": {
+    "type": "text",
+    "name": "Peasent",
+    "avatar": "peasent/peasent.png",
+    "position": "left",
+
+    "content": "Ah thank ye lass, a poor man’s drink is a blessing, (the smile on his face made it all worth it, as the man downed the entire mug with impressive ease.)",
+    "next": "3"
+  },
+  "chose_option_2": {
+    "type": "text",
+    "name": "Peasent",
+    "avatar": "peasent/peasent.png",
+    "position": "left",
+    "animation_in": "move_in",
+    "content": "",
+    "next": "3"
+  },
+  "chose_option_3": {
+    "type": "text",
+    "name": "Peasent",
+    "avatar": "peasent/peasent.png",
+    "position": "left",
+    "animation_in": "shake_regular",
+    "content": "I bet you’d get them cats a free one, ye fur-licker. I bet you’ll make a dog clean it, won’t ya?. ",
+    "next": "3"
+  },
+  "3": {
+    "type": "text",
+    "name": "Peasent",
+    "avatar": "peasent/peasent.png",
+    "position": "left",
+
+    "content": "I’ll tell you, them rebels is to make things better, but I don’t see a coper in me old pockets. Still all cats outside and hairballs in the gutter, but lil ol’ me can’t take a piss on the sidewalk",
+    "next": "4"
+  },
+  "4": {
+    "type": "text",
+    "name": "Peasent",
+    "avatar": "peasent/peasent.png",
+    "position": "left",
+
+    "content": "I’ll say, you think it’s time I walk the army? War is a coming and even the blind can see! You take better care of us drunks than the king, lass",
+    "next": "question_block_2"
+  },
+  "question_block_2": {
+    "type": "question",
+    "text": "",
+    "options": ["Option 1", "Option 2", "Option 3"],
+    "next": ["chose_option_2_1", "chose_option_2_2", "chose_option_2_3"]
+  },
+  "chose_option_2_1": {
+    "type": "text",
+    "name": "",
+    "avatar": "peasent/peasent.png",
+    "position": "left",
+
+    "content": "He looks pissed off you didn’t hand him a free drink, slamming the door behind him. You can now see the irony in his comment.",
+    "next": "5"
+  },
+  "chose_option_2_2": {
+    "type": "text",
+    "name": "",
+    "avatar": "peasent/peasent.png",
+    "position": "left",
+
+    "content": "",
+    "next": "5"
+  },
+  "chose_option_2_3": {
+    "type": "text",
+    "name": "Peasent",
+    "avatar": "peasent/peasent.png",
+    "position": "left",
+    "animation_in": "shake_strong_short",
+    "content": "He stumbles even more than before, the ale really making its way up, yet the cheerful whistling of an old sailor song makes the day brighter.",
+    "next": "5"
+  },
+  "5": {
+    "type": "text",
+    "name": "Peasent",
+    "avatar": "peasent/peasent.png",
+    "position": "left",
+    "animation_in": "move_out",
+    "content": "Oh pardon me mister, don’t mean to soil the air for ya!"
+  }
+}
